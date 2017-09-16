@@ -1,0 +1,34 @@
+program pushpopExample;
+
+#include ( "stdlib.hhf" );
+
+begin pushpopExample;
+
+    stdout.put ( "ebp is: $", ebp, nl );
+    stdout.put ( "esp is: $", esp, nl );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "pushing eax to stack", nl);
+    push ( eax );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "ebp is: $", ebp, nl );
+    stdout.put ( "esp is: $", esp, nl );
+    stdout.put ( "xor eax, eax", nl );
+    xor ( eax, eax );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "pop ( eax )", nl );
+    pop ( eax );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "ebp is: $", ebp, nl );
+    stdout.put ( "esp is: $", esp, nl );
+    stdout.put ( "xor eax, eax", nl );
+    xor ( eax, eax );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "ebp is: $", ebp, nl );
+    stdout.put ( "esp is: $", esp, nl );
+    stdout.put ( "mov ( [esp+4], eax )", nl );
+    mov ( [esp+4], eax );
+    stdout.put ( "Value in eax is: $", eax, nl );
+    stdout.put ( "ebp is: $", ebp, nl );
+    stdout.put ( "esp is: $", esp, nl );
+    
+end pushpopExample;
