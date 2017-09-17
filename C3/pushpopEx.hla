@@ -25,6 +25,8 @@ begin pushpopExample;
     stdout.put ( "Value in eax is: $", eax, nl );
     stdout.put ( "ebp is: $", ebp, nl );
     stdout.put ( "esp is: $", esp, nl );
+    mov ( [esp+4], edx );
+    stdout.put ( "[esp+4] is: $", edx, nl );
     stdout.put ( "mov ( [esp+4], eax )", nl );
     mov ( [esp+4], eax );
     stdout.put ( "Value in eax is: $", eax, nl );
