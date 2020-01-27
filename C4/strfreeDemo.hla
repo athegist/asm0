@@ -22,8 +22,17 @@ begin
 
     stdout.put( "The string you entered was: ", theString, nl);
 
-    // Free up the storage allocated by stralloc;
+    // Get the max length and length of theString
+    mov( theString, ebx );
+    mov ( [ebx-4], eax ); // Get current length.
+    mov ( [ebx-8], ecx ); // Get maximum length.
 
+    stdout.put (
+        "length ( theString ) = ", ( type uns32 eax ), nl,
+        "maxLength ( theString ) = ", ( type uns32 ecx ), nl
+    );
+
+    // Free up the storage allocated by stralloc;
     strfree( theString );
 
 end strfreeDemo;
