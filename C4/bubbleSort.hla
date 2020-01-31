@@ -1,0 +1,37 @@
+// Bubblesort program
+
+program bubbleSort;
+#include( "stdlib.hhf" );
+
+const
+    numElements := 16;
+
+static
+    DataToSort: uns32[ numElements ] :=
+        [
+            1, 2, 16, 14,
+            3, 9, 4, 10,
+            5, 7, 15, 12,
+            8, 6, 11, 13
+        ];
+    NoSwap: boolean;
+
+begin bubbleSort;
+    // Bubble sort for the DataToSort array
+    repeat
+        mov( true, NoSwap );
+        stdout.put( "NoSwap: ", NoSwap, nl );
+        for( mov( 0, ebx ); ebx <= numElements - 2; inc( ebx )) do
+            stdout.put( "Iteration #: ", ebx, nl )
+            stdout.put( DataToSort[ ebx*4 ], nl )
+            mov( DataToSort[ ebx*4 ], eax );
+            if( eax > DataToSort[ ebx*4 + 4  ]) then
+                mov( DataToSort[ ebx*4 + 4 ], ecx );
+                mov( ecx, DataToSort[ ebx*4 ] );
+                mov( eax, DataToSort[ ebx*4 + 4 ] );    // eax contains DataToSort[ ebx* 4 ]
+                mov( false, NoSwap);
+                stdout.put( "NoSwap: ", NoSwap, nl );
+            endif;
+        endfor;
+    until( NoSwap );
+end bubbleSort;
